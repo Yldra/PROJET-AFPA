@@ -1,0 +1,266 @@
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+.container-identity,
+.container-address {
+	display: inline-block;
+	width: 50%;
+}
+
+.container-identity,
+.container-address {
+	max-width: none;
+}
+
+body {
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: "Montserrat", sans-serif;
+	width: 100%;
+}
+
+.container-identity {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	width: 1980px;
+	background-color: white;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 10px auto;
+}
+
+.container-address {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	width: 1980px;
+	background-color: white;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 10px auto;
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: 0.6s ease-in-out;
+}
+
+.form-identity-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.form-address-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container-identity.panel-active .form-identity-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+.container-address.panel-active .form-address-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%,
+	49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+
+	50%,
+	100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.container-identity.panel-active .identity-container {
+	transform: translateX(100%);
+}
+
+.container-address.panel-active .address-container {
+	transform: translateX(100%);
+}
+
+.identity-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.address-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+div .form {
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
+
+button.ghost {
+	background-color: transparent;
+}
+
+button {
+	background-color: #fde398;
+	color: black;
+	border: 1px solid #fde398;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 16px 32px;
+	margin-top: 24px;
+	letter-spacing: 1px;
+	border-radius: 50px;
+	border-color: black;
+	transition: 0.2s ease-in;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: black;
+	color: #fde398;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+h1 {
+	margin: 0;
+	font-size: 24px;
+}
+
+a {
+	text-decoration: none;
+	font-size: 14px;
+	margin: 8px 0 16px;
+	color: black;
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 100;
+	transition: transform 0.6s ease-in-out;
+}
+
+.container-identity.panel-active .overlay-container {
+	transform: translateX(-100%);
+}
+
+.container-address.panel-active .overlay-container {
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: linear-gradient(to right, #fde398, #e7f0fd);
+	background: #fde398;
+	color: black;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.container-identity.panel-active .overlay {
+	transform: translateX(50%);
+}
+
+.container-address.panel-active .overlay {
+	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.container-identity.panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.container-address.panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.container-identity.panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.container-address.panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 10px 0 0px;
+}
+
+form {
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+} */

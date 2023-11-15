@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}E-T | Home{% endblock %}
+
+
+{% block body %}
+<div>
+    <div>
+        <h1>Welcome</h1>
+        {% if app.user %}
+        <p>Welcome {{ app.user.email }} to your English proficiency journey on our platform. We're here to help you take your language skills to the next level!</p>
+        <p>English Test provides you with the perfect environment to assess and enhance your English language abilities. Whether you're preparing for an exam, honing your professional communication, or simply striving to become more fluent, we have the tools and resources you need.</p>
+        <p>Explore our wide range of quizzes, questions, and answers, designed to suit various proficiency levels. We offer content for beginners, intermediate learners, and those seeking advanced challenges. Find your perfect match and start your journey today!</p>
+        <p>As part of our ongoing commitment to providing the best learning experience, we are continually adding new content and features. Stay engaged with our platform to discover the latest updates and improvements.</p>
+        <p>Ready to put your English skills to the test? Dive into our quizzes, access valuable resources, and track your progress. Whether you're looking to expand your vocabulary, master grammar, or improve your conversation skills, we've got you covered.</p>
+        <div>
+            <h3>Discover our test:</h3>
+            <ul>
+                <li><a href="#">Beginner Level</a> - Perfect for starting your language journey.</li>
+                <li><a href="#">Intermediate Level</a> - Challenge yourself with more complex questions.</li>
+                <li><a href="#">Advanced Level</a> - Test your language skills to the fullest.</li>
+            </ul>
+            
+        {% else %}
+        <p> Je ne suis pas un utilisateur connecté </p>
+        {% endif %} 
+        </div>
+    </div>
+</div>
+
+{% endblock %}

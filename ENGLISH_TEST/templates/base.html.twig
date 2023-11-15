@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}
+				E-T | Base
+			{% endblock %}
+		</title>
+		<link rel="icon" href="{{ asset('images/favicon.ico') }}"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		</head>
+		<body>
+			<nav>
+				<div class="logo">
+					<a href="/home"><img src="{{ asset('images/favicon.ico') }}" alt="Logo"></a>
+				</div>
+				<ul class="menu">
+					<li>
+						<a href="/authenticator">Authenticator</a>
+					</li>
+					<li>
+						<a href="/account">Account</a>
+					</li>
+					<li>
+						<a href="/logout">Déconnexion</a>
+					</li>
+					{% if is_granted('ROLE_ADMIN') %}
+						<li>
+							<a href="/admin" target="_blank">Dashboard</a>
+						</li>
+					{% endif %}
+				</ul>
+			</nav>
+			{% block body %}{% endblock %}
+			<footer>
+				<p>&copy;
+					{{ "now"|date("Y") }}
+					- English-Test - Yldra</p>
+			</footer>
+		</body>
+	</html>

@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}E-T | Account
+{% endblock %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="{{ asset('css/account.css') }}">
+{% endblock %}
+
+{% block body %}
+	<!-- Container Identity -->
+	<div class="container-identity" id="Identity">
+		<div class="form-container identity-container">
+			<div class="form">
+				<h1>Identity :</h1>
+				<img src="{{ asset('images/' ~ app.user.photo|default('N/A')) }}" alt="User Avatar" height="100" width="100">
+				<p>
+					<strong>Name:</strong>
+					{{ app.user.name|default('N/A') }}</p>
+				{# <p><strong>Birthdate:</strong> {{ app.user.birthdate|date("d/m/Y")|default('N/A') }}</p> #}
+				<p>
+					<strong>Gender:</strong>
+					{{ app.user.gender|default('N/A') }}</p>
+				<p>
+					<strong>Nationality:</strong>
+					{{ app.user.nationality|default('N/A') }}</p>
+				<p>
+					<strong>Email:</strong>
+					{{ app.user.email|default('N/A') }}</p>
+				<p>
+					<strong>Phone:</strong>
+					{{ app.user.phonenumber|default('N/A') }}</p>
+				<p>
+					<strong>Socials:</strong>
+				</p>
+				<ul>
+					{% for key, value in app.user.socials|default('N/A') %}
+						<li>
+							<a href="{{ value }}">{{ key }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="form-container form-identity-container">
+			<div class="form">
+				<form method="POST">
+					<button type="submit">Save</button>
+				</form>
+			</div>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Identity</h1>
+					<p>Who am I?</p>
+					<button class="ghost" id="identity-account">Account</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Identity Update</h1>
+					<p>What will I become?</p>
+					<button class="ghost" id="identity-edit">Edit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Container Address -->
+	<div class="container-address" id="Address">
+		<div class="form-container address-container">
+			<div class="form">
+				<h1>Address :</h1>
+			</div>
+		</div>
+		<div class="form-container form-address-container">
+			<div class="form">
+				<form method="POST">
+
+					<button type="submit">Save</button>
+
+				</form>
+			</div>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Address</h1>
+					<p>Where am I?</p>
+					<button class="ghost" id="address-account">Account</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Address Update</h1>
+					<p>Where will I go?</p>
+					<button class="ghost" id="address-edit">Edit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		// Identity
+const Identity = document.getElementById('Identity');
+const idEButton = document.getElementById('identity-edit');
+const idAButton = document.getElementById('identity-account');
+
+idEButton.addEventListener('click', () => {
+Identity.classList.add('panel-active');
+})
+
+idAButton.addEventListener('click', () => {
+Identity.classList.remove('panel-active');
+})
+
+// Address
+const Address = document.getElementById('Address');
+const adEButton = document.getElementById('address-edit');
+const adAButton = document.getElementById('address-account');
+
+adEButton.addEventListener('click', () => {
+Address.classList.add('panel-active');
+})
+
+adAButton.addEventListener('click', () => {
+Address.classList.remove('panel-active');
+})
+	</script>
+{% endblock %}

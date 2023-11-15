@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}E-T | Authenticator
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/authenticator.css') }}">
+{% endblock %}
+
+{% block body %}
+
+	<div class="container" id="container">
+		<div class="form-container sign-up-container">
+			<form action="{{ path('register') }}" method="POST">
+				{{ form_errors(registrationForm) }}
+				{{ form_start(registrationForm) }}
+				<h1>Make an Account</h1><br>
+				{{ form_row(registrationForm.email, {'attr': {'size': 20, 'class': 'input'}}) }}
+				{{ form_row(registrationForm.plainPassword, {'attr': {'size': 20, 'class': 'input'}}) }}
+				{{ form_row(registrationForm.agreeTerms) }}
+				<button class="register" type="submit">Register</button>
+				{{ form_end(registrationForm) }}
+			</form>
+		</div>
+		<div class="form-container login-container">
+			<form action="{{ path('authenticator') }}" method="POST">
+				<h1>Sign In</h1><br>
+				<label for="inputEmail">Email :</label>
+				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" autocomplete="email" required autofocus>
+				<label for="inputPassword">Password :</label>
+				<input type="password" name="password" id="inputPassword" autocomplete="current-password" required>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<button class="login" type="submit">Connect</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Ready to face some challenges?</h1>
+					<p>Discover the latest tests we cooked for you.</p>
+					<button class="ghost" id="login">Connect</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Want to be part of the community?</h1>
+					<p>It's easy. Click right there !</p>
+					<button class="ghost" id="signUp">Register</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Login/Register Panel
+const container = document.getElementById('container');
+const loginButton = document.getElementById('login');
+const signUpButton = document.getElementById('signUp');
+
+signUpButton.addEventListener('click', () => {
+container.classList.add('panel-active');
+})
+
+loginButton.addEventListener('click', () => {
+container.classList.remove('panel-active');
+})
+	</script>
+{% endblock %}
